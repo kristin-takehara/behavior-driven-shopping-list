@@ -134,3 +134,11 @@ describe('ShoppingList', function() {
   expect(s_list.addItem).to.be.a('function');
   });
 });
+
+//Invoking the 'addItem' method by pasing in anything else that is NOT a ShoppingListItem object, should immediately throw and error
+describe('ShoppingList', function() {
+  let s_list = new ShoppingList("items");
+  it("Invoking the 'addItem' method by pasing in anything else that is NOT a ShoppingListItem object, should immediately throw and error", function() {
+  expect(s_list);
+  });
+});

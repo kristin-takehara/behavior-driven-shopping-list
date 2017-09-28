@@ -5,10 +5,10 @@ class ShoppingList {
     this.items = [];
   }
 
-addItem(name) {
-  if(name )
+  addItem(name) {
+  if(name  )
   this.items.push(ShoppingListItems.name);
-}
+  }
 
 
 
