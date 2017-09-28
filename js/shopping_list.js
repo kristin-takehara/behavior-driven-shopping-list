@@ -6,11 +6,12 @@ class ShoppingList {
   }
 
   addItem(name) {
-  if(name  )
-  this.items.push(ShoppingListItems.name);
+  if(ShoppingListItem.name !== name) {
+    throw error;
+  }else{
+  return this.items.push(ShoppingListItems.name);
   }
-
-
+}
 
 
 }
