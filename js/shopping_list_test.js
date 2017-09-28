@@ -1,5 +1,7 @@
 //jshint esversion: 6
 
+
+////////TESTS for Shopping List Items
 const expect = chai.expect;
 const should = chai.should();
 
@@ -93,5 +95,42 @@ describe('ShoppingListItem', function() {
   it("When the instance's 'render' method is called, will construct AND return an html formatted string, whose content will be wrapped in <li> tags", function() {
     let response = sl.render();
   expect(response).to.be.a('string');
+  });
+});
+
+
+
+///////TESTS for Shopping List
+
+//Is a (class) function
+describe('ShoppingList', function() {
+  let s_list = new ShoppingList("items");
+
+  it("Is a function", function(){
+  expect(ShoppingList).to.be.a('function');
+  });
+});
+
+//Has a property named 'items'
+describe('ShoppingList', function() {
+  let s_list = new ShoppingList("items");
+  it("Has a property named 'items'", function() {
+  expect(s_list).to.have.property('items');
+  });
+});
+
+//Has a constructor method that initializes 'items' as an empty Array
+describe('ShoppingList', function() {
+  let s_list = new ShoppingList("items");
+  it("Has a constructor method that initializes 'items' as an empty Array", function() {
+  expect(s_list.items).to.be.a('Array');
+  });
+});
+
+//Has a method named 'addItem' that accepts a single ShoppingListItem argument
+describe('ShoppingList', function() {
+  let s_list = new ShoppingList("items");
+  it("Has a method named 'addItem' that accepts a single ShoppingListItem argument", function() {
+  expect(s_list.addItem).to.be.a('function');
   });
 });

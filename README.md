@@ -37,7 +37,7 @@ The tests should describe the following shopping list functionality:
 - ShoppingListItem has a property named `is_done`
 - ShoppingListItem has a constructor method that accepts 2 arguments, `name` and `description`
   - the constructor method sets the new instances `name` and `description` properties using the arguments passed in
-- ShoppingListItem has a method named `check`
+- ShoppingListItem has a method named `check`items
   -  calling the instance's `check` method will set it's `is_done` property to true
 - ShoppingListItem has a method named `uncheck`
   -  calling the instance's `uncheck` method will set it's `is_done` property to false
@@ -61,7 +61,7 @@ var some_html_output = '<ul> \
 
 #### ShoppingList
 
-- ShoppingList is a class
+- ShoppingList is a function
 - ShoppingList has a property named `items`
 - ShoppingList has a constructor method that initializes `items` as an empty Array
 - ShoppingList has a method named `addItem` that accepts a single ShoppingListItem argument
