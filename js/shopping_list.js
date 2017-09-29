@@ -20,6 +20,9 @@ class ShoppingList {
 
   }
 
+  render(){
+
+  }
 
 }
 
