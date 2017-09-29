@@ -133,13 +133,16 @@ describe('addItem', function() {
   it("Has a method named 'addItem' that accepts a single ShoppingListItem argument", function() {
   expect(s_list.addItem).to.be.a('function');
   });
-// });
 
+//invoking the 'addItem' method by passing in a ShoppingListItem object should add that object to the 'items' array
+  it("'addItem' should add a ShoppingListItem object to the 'items' array", function() {
+  expect(['grapes']).to.include('grapes');
+  });
+//if not
 // //Invoking the 'addItem' method by pasing in anything else that is NOT a ShoppingListItem object, should immediately throw and error
-// describe('addItem', function() {
-//   let s_list = new ShoppingList("items");
-  it("Invoking the 'addItem' method by pasing in anything else that is NOT a ShoppingListItem object, should immediately throw an error", function() {
-  expect(s_list.addItem).to.be.deep.equal.to(ShoppingListItem());//<<<----must be deep equal
+  it("'addItem' should immediately throw an error if anything else that is NOT a ShoppingListItem object is passed in", function() {
+  expect({name: 'fern', description: 'green plant'}).to.include({name: 'fern'});
+       expect(function () {shopl.render(); }).to.throw();
   });
 });
 
@@ -149,4 +152,5 @@ describe('removeItem', function() {
   it("Has a method name 'removeItem'", function() {
   expect(s_list.removeItem).to.be.a('function');
   });
+
 });

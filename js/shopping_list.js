@@ -16,12 +16,14 @@ class ShoppingList {
     throw new Error('Check your list twice');
   }
 }
-  removeItem(ShoppingListItem){
+  removeItem(slInstance){
 
   }
 
 
 }
+
+
 
 console.log(this.items);
 module.exports = ShoppingList;
