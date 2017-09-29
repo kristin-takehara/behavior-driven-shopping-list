@@ -153,6 +153,9 @@ describe('removeItem', function() {
   expect(s_list.removeItem).to.be.a('function');
   });
 
-
-
+  it("When 'removeItem' is invoked with no parameters, it should remove the last item in the 'items' list if there are any items", function() {
+  let remove = s_list.removeItem;
+  expect(remove).to.exclude();
+  }); //<<---need to complete
 });
+
