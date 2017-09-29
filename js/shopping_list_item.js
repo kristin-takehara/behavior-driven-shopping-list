@@ -16,12 +16,8 @@ class ShoppingListItem{
     this.is_done = false;
   }
 
-  render(){ //<<<--Need to construct this method
-    let done = this.check();
-    let name = this.name;
-    let description = this.description;
-
-    let html_output = `<li class = "completed_[${done}]"> \ <span>[${name}] </span> \ <span>[${description}]</span> \ </li>`;
+  render(){
+    let html_output = `<li class = "completed_[${this.is_done}]"><span>[${this.name}]</span><span>[${this.description}]</span></li>`;
 
     return html_output;
   }

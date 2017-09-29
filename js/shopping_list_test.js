@@ -8,7 +8,7 @@ const should = chai.should();
 //is a function
 describe('ShoppingListItem', function() {
     let sl = new ShoppingListItem("name", "description");
-
+//<< ---place 'before' to assure the order of execution
   it('Is a function', function() {
     expect(ShoppingListItem).to.be.a('function');
   });
@@ -45,7 +45,7 @@ describe('constructor', function() {
   it("Has a constructor method that accepts two arguments, 'name'  and 'description'", function() {
     expect(sl).to.have.constructor("name", "description");
   });
-});
+}); //<<<--pass in a REAL-WORLD example, otherwise this only tests that 'named' and 'description' exists as declared in 'new ShoppingListItem'.
 
 //Has a method named 'check'
 describe('check', function() {
@@ -63,6 +63,7 @@ describe('check', function() {
     expect(sl.is_done).to.be.true;
   }); //should be set to be true
 });
+//*note: can use assertion: 'respondTo' to check both
 
 //Has a method named 'uncheck'
 describe('uncheck', function() {
@@ -76,10 +77,13 @@ describe('uncheck', function() {
 // describe('uncheck', function() {
 //   let sl = new ShoppingListItem("name", "description");
   it("When the instance's 'uncheck' method is called, will set it's 'is_done' property to be FALSE", function() {
+    sl.check();//forces in to a 'check'ed state to test against
     sl.uncheck();//invokes the work
     expect(sl.is_done).to.be.false;
   });
 });
+//***note: could also test to verify that the data type is a boolean
+
 
 //Has a method named 'render'
 describe('render', function() {
@@ -95,8 +99,10 @@ describe('render', function() {
   it("When the instance's 'render' method is called, will construct AND return an html formatted string, whose content will be wrapped in <li> tags", function() {
     let response = sl.render();
   expect(response).to.be.a('string');
-  });
+  });//trivial testing -- need more specificity
 });
+
+//create test for the ACTUAL returned string
 
 
 
@@ -157,6 +163,4 @@ describe('removeItem', function() {
   let remove = s_list.removeItem;
   expect(remove).to.exclude();
   }); //<<---need to complete
-
 });
-

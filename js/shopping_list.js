@@ -8,13 +8,12 @@ class ShoppingList {
 
   addItem(slInstance) {
 //invoking 'addItem' by passing in a ShoppingListItem object should ADD the item to 'this.items'
-  if(slInstance instanceof ShoppingListItem) {
-    this.items.push(slInstance);
-    //<<<--test against
-//if the object is NOT from ShoppingListItem, should immediately throw an error
-  }else{
-    throw new Error('Check your list twice');
-  }
+    if(!(slInstance instanceof ShoppingListItem)) { //a short-circuit
+    throw new Error("Not a shopping list item");
+    }
+
+  this.items.push(slInstance);
+  return this.items;
 }
   removeItem(slInstance){
 
