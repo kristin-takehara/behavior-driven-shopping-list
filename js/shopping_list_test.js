@@ -157,5 +157,6 @@ describe('removeItem', function() {
   let remove = s_list.removeItem;
   expect(remove).to.exclude();
   }); //<<---need to complete
+
 });
 
