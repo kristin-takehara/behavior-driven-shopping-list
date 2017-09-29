@@ -5,19 +5,23 @@ class ShoppingList {
     this.items = [];
   }
 
-  addItem(name) {
-  if(ShoppingListItem.name !== name) {
-    throw error;
-  }else{
-  return this.items.push(ShoppingListItems.name);
-    }
-  }
 
-  removeItem(name){
+  addItem(slInstance) {
+//invoking 'addItem' by passing in a ShoppingListItem object should ADD the item to 'this.items'
+  if(slInstance instanceof ShoppingListItem) {
+    this.items.push(slInstance);
+    //<<<--test against
+//if the object is NOT from ShoppingListItem, should immediately throw an error
+  }else{
+    throw new Error('Check your list twice');
+  }
+}
+  removeItem(ShoppingListItem){
 
   }
 
 
 }
 
+console.log(this.items);
 module.exports = ShoppingList;

@@ -12,28 +12,28 @@ describe('ShoppingListItem', function() {
   it('Is a function', function() {
     expect(ShoppingListItem).to.be.a('function');
   });
-});
+// });
 
-//has property 'name'
-describe('ShoppingListItem', function() {
-    let sl = new ShoppingListItem("name", "description");
+// //has property 'name'
+// describe('ShoppingListItem', function() {
+//     let sl = new ShoppingListItem("name", "description");
 
   it("Has a property named 'name'", function() {
     expect(sl).to.have.property("name");
   });
-});
+// });
 
-//has a property named 'description'
-describe('ShoppingListItem', function() {
-    let sl = new ShoppingListItem("name", "description");
+// //has a property named 'description'
+// describe('ShoppingListItem', function() {
+//     let sl = new ShoppingListItem("name", "description");
   it("Has a property named 'description'", function() {
     expect(sl).to.have.property("description");
   });
-});
+// });
 
-//has a property named 'is_done'
-describe('ShoppingListItem', function() {
-  let sl = new ShoppingListItem("name", "description");
+// //has a property named 'is_done'
+// describe('ShoppingListItem', function() {
+//   let sl = new ShoppingListItem("name", "description");
   it("Has a property named 'is_done'", function() {
     expect(sl).to.have.property("is_done");
   });
@@ -53,11 +53,11 @@ describe('check', function() {
   it("Has a method named 'check'", function() {
     expect(sl.check).to.be.a("function");
   });
-});
+// });
 
-//When the instance's 'check' method is called, will set its 'is_done' property to be TRUE
-describe('check', function() {
-  let sl = new ShoppingListItem("name", "description");
+// //When the instance's 'check' method is called, will set its 'is_done' property to be TRUE
+// describe('check', function() {
+//   let sl = new ShoppingListItem("name", "description");
   it("When the instance's 'check' method is called, will set its 'is_done' property to be TRUE", function() {
     sl.check(); //invokes the work
     expect(sl.is_done).to.be.true;
@@ -70,11 +70,11 @@ describe('uncheck', function() {
   it("Has a method called 'uncheck'", function() {
     expect(sl.uncheck).to.be.a('function');
   });
-});
+// });
 
-//When the instance's 'uncheck' method is called, will set its 'is_done' property to be FALSE
-describe('uncheck', function() {
-  let sl = new ShoppingListItem("name", "description");
+// //When the instance's 'uncheck' method is called, will set its 'is_done' property to be FALSE
+// describe('uncheck', function() {
+//   let sl = new ShoppingListItem("name", "description");
   it("When the instance's 'uncheck' method is called, will set it's 'is_done' property to be FALSE", function() {
     sl.uncheck();//invokes the work
     expect(sl.is_done).to.be.false;
@@ -87,11 +87,11 @@ describe('render', function() {
   it("Has a method named 'render'", function() {
     expect(sl.render).to.be.a('function');
   });
-});
+// });
 
-//When the instance's 'render' method is called, will construct AND return an html formatted string, whose content will be wrapped in <li> tags.
-describe('render', function() {
-  let sl = new ShoppingListItem("name", "description");
+// //When the instance's 'render' method is called, will construct AND return an html formatted string, whose content will be wrapped in <li> tags.
+// describe('render', function() {
+//   let sl = new ShoppingListItem("name", "description");
   it("When the instance's 'render' method is called, will construct AND return an html formatted string, whose content will be wrapped in <li> tags", function() {
     let response = sl.render();
   expect(response).to.be.a('string');
@@ -133,12 +133,20 @@ describe('addItem', function() {
   it("Has a method named 'addItem' that accepts a single ShoppingListItem argument", function() {
   expect(s_list.addItem).to.be.a('function');
   });
+// });
+
+// //Invoking the 'addItem' method by pasing in anything else that is NOT a ShoppingListItem object, should immediately throw and error
+// describe('addItem', function() {
+//   let s_list = new ShoppingList("items");
+  it("Invoking the 'addItem' method by pasing in anything else that is NOT a ShoppingListItem object, should immediately throw an error", function() {
+  expect(s_list.addItem).to.be.deep.equal.to(ShoppingListItem());//<<<----must be deep equal
+  });
 });
 
-//Invoking the 'addItem' method by pasing in anything else that is NOT a ShoppingListItem object, should immediately throw and error
-describe('addItem', function() {
+//Has a method named ' removeItem' that accepts a single ShoppingListItem argument
+describe('removeItem', function() {
   let s_list = new ShoppingList("items");
-  it("Invoking the 'addItem' method by pasing in anything else that is NOT a ShoppingListItem object, should immediately throw an error", function() {
-  expect(s_list);//<<<----
+  it("Has a method name 'removeItem'", function() {
+  expect(s_list.removeItem).to.be.a('function');
   });
 });
