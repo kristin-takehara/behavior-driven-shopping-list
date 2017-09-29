@@ -10,8 +10,12 @@ class ShoppingList {
     throw error;
   }else{
   return this.items.push(ShoppingListItems.name);
+    }
   }
-}
+
+  removeItem(name){
+
+  }
 
 
 }

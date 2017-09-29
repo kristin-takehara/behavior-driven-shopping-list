@@ -26,7 +26,7 @@ describe('ShoppingListItem', function() {
 //has a property named 'description'
 describe('ShoppingListItem', function() {
     let sl = new ShoppingListItem("name", "description");
-  it("Has a property named 'description", function() {
+  it("Has a property named 'description'", function() {
     expect(sl).to.have.property("description");
   });
 });
@@ -34,13 +34,13 @@ describe('ShoppingListItem', function() {
 //has a property named 'is_done'
 describe('ShoppingListItem', function() {
   let sl = new ShoppingListItem("name", "description");
-  it("Has a property named description", function() {
+  it("Has a property named 'is_done'", function() {
     expect(sl).to.have.property("is_done");
   });
 });
 
 //has a constructor method that accepts 2 arguments 'name' and 'description'
-describe('ShoppingListItem', function() {
+describe('constructor', function() {
   let sl = new ShoppingListItem("name", "description");
   it("Has a constructor method that accepts two arguments, 'name'  and 'description'", function() {
     expect(sl).to.have.constructor("name", "description");
@@ -48,7 +48,7 @@ describe('ShoppingListItem', function() {
 });
 
 //Has a method named 'check'
-describe('ShoppingListItem', function() {
+describe('check', function() {
   let sl = new ShoppingListItem("name", "description");
   it("Has a method named 'check'", function() {
     expect(sl.check).to.be.a("function");
@@ -56,7 +56,7 @@ describe('ShoppingListItem', function() {
 });
 
 //When the instance's 'check' method is called, will set its 'is_done' property to be TRUE
-describe('ShoppingListItem', function() {
+describe('check', function() {
   let sl = new ShoppingListItem("name", "description");
   it("When the instance's 'check' method is called, will set its 'is_done' property to be TRUE", function() {
     sl.check(); //invokes the work
@@ -65,7 +65,7 @@ describe('ShoppingListItem', function() {
 });
 
 //Has a method named 'uncheck'
-describe('ShoppingListItem', function() {
+describe('uncheck', function() {
   let sl = new ShoppingListItem("name", "description");
   it("Has a method called 'uncheck'", function() {
     expect(sl.uncheck).to.be.a('function');
@@ -73,7 +73,7 @@ describe('ShoppingListItem', function() {
 });
 
 //When the instance's 'uncheck' method is called, will set its 'is_done' property to be FALSE
-describe('ShoppingListItem', function() {
+describe('uncheck', function() {
   let sl = new ShoppingListItem("name", "description");
   it("When the instance's 'uncheck' method is called, will set it's 'is_done' property to be FALSE", function() {
     sl.uncheck();//invokes the work
@@ -82,7 +82,7 @@ describe('ShoppingListItem', function() {
 });
 
 //Has a method named 'render'
-describe('ShoppingListItem', function() {
+describe('render', function() {
   let sl = new ShoppingListItem("name", "description");
   it("Has a method named 'render'", function() {
     expect(sl.render).to.be.a('function');
@@ -90,7 +90,7 @@ describe('ShoppingListItem', function() {
 });
 
 //When the instance's 'render' method is called, will construct AND return an html formatted string, whose content will be wrapped in <li> tags.
-describe('ShoppingListItem', function() {
+describe('render', function() {
   let sl = new ShoppingListItem("name", "description");
   it("When the instance's 'render' method is called, will construct AND return an html formatted string, whose content will be wrapped in <li> tags", function() {
     let response = sl.render();
@@ -112,7 +112,7 @@ describe('ShoppingList', function() {
 });
 
 //Has a property named 'items'
-describe('ShoppingList', function() {
+describe('items', function() {
   let s_list = new ShoppingList("items");
   it("Has a property named 'items'", function() {
   expect(s_list).to.have.property('items');
@@ -120,7 +120,7 @@ describe('ShoppingList', function() {
 });
 
 //Has a constructor method that initializes 'items' as an empty Array
-describe('ShoppingList', function() {
+describe('constructor', function() {
   let s_list = new ShoppingList("items");
   it("Has a constructor method that initializes 'items' as an empty Array", function() {
   expect(s_list.items).to.be.a('Array');
@@ -128,7 +128,7 @@ describe('ShoppingList', function() {
 });
 
 //Has a method named 'addItem' that accepts a single ShoppingListItem argument
-describe('ShoppingList', function() {
+describe('addItem', function() {
   let s_list = new ShoppingList("items");
   it("Has a method named 'addItem' that accepts a single ShoppingListItem argument", function() {
   expect(s_list.addItem).to.be.a('function');
@@ -136,9 +136,9 @@ describe('ShoppingList', function() {
 });
 
 //Invoking the 'addItem' method by pasing in anything else that is NOT a ShoppingListItem object, should immediately throw and error
-describe('ShoppingList', function() {
+describe('addItem', function() {
   let s_list = new ShoppingList("items");
   it("Invoking the 'addItem' method by pasing in anything else that is NOT a ShoppingListItem object, should immediately throw an error", function() {
-  expect(s_list);
+  expect(s_list);//<<<----
   });
 });
